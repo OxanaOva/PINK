@@ -33,7 +33,7 @@
     "*.js",
     "source/*.html",
     "source/js/**/*.js",
-    "source/img/**/*.svg",
+    "source/source/img/**/*.svg",
     "source/sass/**/*.scss"
   ],
   "engines": {
