@@ -1,0 +1,9 @@
+.store__list {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+.store__item:not(:last-of-type) {
+  padding-right: 35px;
+}

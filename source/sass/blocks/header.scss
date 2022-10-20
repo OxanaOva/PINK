@@ -1,0 +1,36 @@
+header {
+  color: $color-white;
+}
+
+.page-header__logo {
+  color: $color-white;
+}
+
+.page-header {
+  min-height: 462px;
+  background-image: url(/source/img/background/background-hand.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: $color-gray-900;
+
+}
+
+.page-main__header {
+  background-color: $color-gray-900;
+}
+
+.site-menu__link {
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-family: $font-heading;
+  color: $color-white;
+  line-height: 32px;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.page-header__list {
+  list-style-type: none;
+}
