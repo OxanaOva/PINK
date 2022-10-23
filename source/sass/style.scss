@@ -1,9 +1,14 @@
 @import "./global/variables.scss";
 @import "./global/fonts.scss";
 @import "./global/normalize";
+@import "./global/global.scss";
 
 // Blocks
 @import "./blocks/button.scss";
 @import "./blocks/visually-hidden.scss";
 @import "./blocks/header.scss";
-@import "./blocks/store.scss"
+@import "./blocks/store.scss";
+@import "./blocks/menu.scss";
+// @import "./blocks/site-menu.scss";
+// @import "./blocks/page-main.scss";
+@import "./blocks/page.scss";

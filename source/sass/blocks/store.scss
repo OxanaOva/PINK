@@ -1,9 +1,71 @@
-.store__list {
+.store {
   display: flex;
-  list-style-type: none;
+  flex-direction: column;
+  margin: 0;
   align-items: center;
+  padding: 32px 20px;
+  background-color: $color-gray-900;
+  color: $color-white;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-items: center;
+    width: 940px;
+    padding: 108px 10px 122px;
+    margin: 0 auto;
+    background-image: url("/source/img/background/hand.png");
+    background-size: auto;
+    background-position: 70% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+
+  }
+}
+
+.store__content {
+  grid-column: 1/2;  
+}
+
+  .store__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 32px 0 23px;
+  padding: 0;
+  @media (max-width: $mobile-width-only) {
+    justify-content: center;
+  }
+  @media (min-width: $tablet-width) {
+    width: 300px;
+    padding: 0;
+    justify-content: center;
+  }
 }
 
 .store__item:not(:last-of-type) {
   padding-right: 35px;
+}
+
+.store__title {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+
+  margin: 0;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 120%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.store__description {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $font-body;
+  font-weight: 300;
+  text-align: center;
 }

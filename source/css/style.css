@@ -20,7 +20,7 @@
 * 2. Prevent adjustments of font size after orientation changes in iOS.
 */
 html {
-  line-height: 1.15; /* 1 */
+  /* line-height: 1.15; 1 */
   /* -webkit-text-size-adjust: 100%; 2 */
 }
 
@@ -322,11 +322,27 @@ template {
   display: none;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 660px) {
+  .main-nav__toggle {
+    display: none;
+  }
+}
+
 .button {
   display: block;
-  box-sizing: border-box;
   border: 0;
-  font-family: inherit;
+  font: inherit;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
@@ -335,14 +351,24 @@ template {
 }
 
 .button--rounded {
-  max-width: 300px;
-  font-family: "Open sans bold", sans-serif;
-  color: #ffffff;
-  padding: 21px;
+  padding: 15px;
   border: 3px solid #ffffff;
   border-radius: 29px;
   line-height: 18px;
   background-color: transparent;
+  color: #ffffff;
+}
+@media (max-width: 659px) {
+  .button--rounded {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 660px) {
+  .button--rounded {
+    width: 300px;
+    justify-content: flex-start;
+  }
 }
 
 .visually-hidden {
@@ -356,48 +382,242 @@ template {
   overflow: hidden;
 }
 
-header {
-  color: #ffffff;
+@media (max-width: 659px) {
+  .page-header {
+    position: relative;
+    min-height: 462px;
+    background-image: url("/source/img/background/background-hand.jpg");
+    background-color: #283645;
+    background-position: 50% 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: #ffffff;
+  }
+}
+@media (min-width: 660px) {
+  .page-header {
+    background-image: url("/source/img/background/back-desktop.jpg");
+    background-position: 50% 0;
+    background-color: #283645;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: #ffffff;
+  }
+}
+
+.page-header__nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+@media (min-width: 1101px) {
+  .page-header__nav {
+    display: grid;
+    grid-template-columns: 147px 1fr;
+    gap: 170px;
+    width: 940px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.page-header__bar {
+  padding: 21px 20px;
+}
+@media (max-width: 659px) {
+  .page-header__bar {
+    position: relative;
+    min-width: 320px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 21px 20px;
+  }
 }
 
 .page-header__logo {
-  color: #ffffff;
+  position: relative;
+  display: block;
 }
 
-.page-header {
-  min-height: 462px;
-  background-image: url(/source/img/background/background-hand.jpg);
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-color: #1d2631;
+@media (max-width: 659px) {
+  .header-logo__image--mobile {
+    display: block;
+  }
+}
+@media (min-width: 660px) {
+  .header-logo__image--mobile {
+    display: none;
+  }
 }
 
-.page-main__header {
-  background-color: #1d2631;
+@media (max-width: 660px) {
+  .header-logo__image--tablet {
+    display: none;
+  }
+}
+@media (min-width: 1101px) {
+  .header-logo__image--tablet {
+    display: none;
+  }
+}
+@media (min-width: 660px) and (max-width: 1100px) {
+  .header-logo__image--tablet {
+    display: block;
+  }
 }
 
-.site-menu__link {
-  margin: 0 auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  font-family: "Open sans bold", sans-serif;
-  color: #ffffff;
-  line-height: 32px;
+@media (max-width: 1100px) {
+  .header-logo__image--desktop {
+    display: none;
+  }
+}
+@media (min-width: 1101px) {
+  .header-logo__image--desktop {
+    display: block;
+  }
+}
+
+.store {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   align-items: center;
-  text-transform: uppercase;
-  text-decoration: none;
+  padding: 32px 20px;
+  background-color: #1d2631;
+  color: #ffffff;
+}
+@media (min-width: 660px) {
+  .store {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-items: center;
+    width: 940px;
+    padding: 108px 10px 122px;
+    margin: 0 auto;
+    background-image: url("/source/img/background/hand.png");
+    background-size: auto;
+    background-position: 70% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+  }
 }
 
-.page-header__list {
-  list-style-type: none;
+.store__content {
+  grid-column: 1/2;
 }
 
 .store__list {
   display: flex;
-  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  list-style-type: none;
+  margin: 32px 0 23px;
+  padding: 0;
+}
+@media (max-width: 659px) {
+  .store__list {
+    justify-content: center;
+  }
+}
+@media (min-width: 660px) {
+  .store__list {
+    width: 300px;
+    padding: 0;
+    justify-content: center;
+  }
 }
 
 .store__item:not(:last-of-type) {
   padding-right: 35px;
+}
+
+.store__title {
+  margin: 0;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 120%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+@media (max-width: 659px) {
+  .store__title {
+    display: none;
+  }
+}
+
+.store__description {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Open sans", "Arial", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.page-header__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@media (max-width: 1100px) {
+  .page-header__list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1101px) {
+  .page-header__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1100px) {
+  .site-menu__item {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: #283645;
+    box-shadow: 0px 1px 0px #000000, inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+  }
+}
+
+.site-menu__link {
+  color: #ffffff;
+  text-decoration: none;
+}
+@media (max-width: 1100px) {
+  .site-menu__link {
+    display: block;
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 1101px) {
+  .site-menu__link {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #ffffff;
+  }
+}
+
+.page {
+  height: 100%;
+  font-family: "Open sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.page__body {
+  min-height: 100%;
+  margin: 0;
+  color: #283645;
+  background-color: #ffffff;
 }/*# sourceMappingURL=style.css.map */

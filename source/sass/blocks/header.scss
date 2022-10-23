@@ -1,36 +1,89 @@
-header {
-  color: $color-white;
+.page-header {
+  @media (max-width: $mobile-width-only) {
+    position: relative;
+    min-height: 462px;
+    background-image: url("/source/img/background/background-hand.jpg");
+    background-color: $color-gray-100;
+    background-position: 50% 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: $color-white;  
+  }
+  @media (min-width: $tablet-width) {
+    background-image: url("/source/img/background/back-desktop.jpg");
+    background-position: 50% 0;
+    background-color: $color-gray-100;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: $color-white;
+  }
+}
+
+.page-header__nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  
+    @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+    // width: 620px;
+
+  }
+
+  @media (min-width: $desktop-width-only) {
+    display: grid;
+    grid-template-columns: 147px 1fr;
+    gap: 170px;
+    width: 940px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.page-header__bar { 
+  padding: 21px 20px;
+  
+  @media (max-width: $mobile-width-only) {
+    position: relative;
+    min-width: 320px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 21px 20px;
+  }  
 }
 
 .page-header__logo {
-  color: $color-white;
+  position: relative;
+  display: block;
 }
 
-.page-header {
-  min-height: 462px;
-  background-image: url(/source/img/background/background-hand.jpg);
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-color: $color-gray-900;
-
+.header-logo__image--mobile {
+  @media (max-width: $mobile-width-only) {
+    display: block;
+  }
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 }
 
-.page-main__header {
-  background-color: $color-gray-900;
+.header-logo__image--tablet {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+  @media (min-width: $desktop-width-only) {
+    display: none;
+  }
+  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+    display: block;
+  }
 }
 
-.site-menu__link {
-  margin: 0 auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  font-family: $font-heading;
-  color: $color-white;
-  line-height: 32px;
-  align-items: center;
-  text-transform: uppercase;
-  text-decoration: none;
+.header-logo__image--desktop {
+  @media (max-width: $desktop-width) {
+    display: none;
+  }
+  @media (min-width: $desktop-width-only) {
+    display: block;
+  }
 }
 
-.page-header__list {
-  list-style-type: none;
-}

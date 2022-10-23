@@ -1,8 +1,35 @@
+.main-nav__toggle {
+  // ::before {
+  //   content: "";
+  //   background-image: url(/source/img/icon/burger.svg);
+  //   width: 50px;
+  //   height: 24px;
+  //   position: absolute;
+  //   z-index: 2;
+  //   top: 21px;
+  //   right: 20px;
+  // }
+
+  // ::after {
+  //   content: "";
+  //   background-image: url(/source/img/icon/close-menu.svg);
+  //   width: 23px;
+  //   height: 23px;
+  //   position: absolute;
+  //   z-index: 2;
+  //   top: 23px;
+  //   right: 20px;
+  // }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
 .button {
   display: block;
-  box-sizing: border-box;
   border: 0;
-  font-family: inherit;
+  font: inherit;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
@@ -11,13 +38,18 @@
 }
 
 .button--rounded {
-  max-width: 300px;
-  font-family: $font-heading;
-  color:  $color-white;
-  padding: 21px;
+  padding: 15px;
   border: 3px solid $color-white;
   border-radius: 29px;
   line-height: 18px;
   background-color: transparent;
+  color: $color-white;
+  @media (max-width: $mobile-width-only) {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  @media (min-width: $tablet-width) {
+    width: 300px;
+    justify-content: flex-start;
+  }
 }
-
