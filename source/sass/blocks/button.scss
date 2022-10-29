@@ -1,14 +1,14 @@
 .main-nav__toggle {
-  // ::before {
-  //   content: "";
-  //   background-image: url(/source/img/icon/burger.svg);
-  //   width: 50px;
-  //   height: 24px;
-  //   position: absolute;
-  //   z-index: 2;
-  //   top: 21px;
-  //   right: 20px;
-  // }
+  ::before {
+    content: "";
+    background-image: url(/source/img/icon/burger.svg);
+    width: 50px;
+    height: 24px;
+    position: absolute;
+    z-index: 2;
+    top: 21px;
+    right: 20px;
+  }
 
   // ::after {
   //   content: "";
@@ -21,7 +21,7 @@
   //   right: 20px;
   // }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     display: none;
   }
 }
@@ -52,4 +52,27 @@
     width: 300px;
     justify-content: flex-start;
   }
+}
+
+.slider__toggle-button {
+  width: 6px;
+  height: 6px;
+  margin: 0;
+  padding: 0;
+  background-color: $color-gray-100;
+  opacity: 0.3;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;    
+}
+
+.slider__toggle-button:not(:last-of-type) {
+  margin-right: 19px;
+}
+
+.slider__toggle-button--current {
+  box-shadow: 0 0 0 3px $color-gray-100;
+  background-color: transparent;
+  cursor: default;
+  opacity: 1;
 }

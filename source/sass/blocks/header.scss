@@ -1,7 +1,7 @@
 .page-header {
   @media (max-width: $mobile-width-only) {
     position: relative;
-    min-height: 462px;
+
     background-image: url("/source/img/background/background-hand.jpg");
     background-color: $color-gray-100;
     background-position: 50% 0;
@@ -16,18 +16,22 @@
     background-size: auto;
     background-repeat: no-repeat;
     color: $color-white;
+    margin-bottom: 77px;
   }
 }
 
 .page-header__nav {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  @media (max-width: $mobile-width-only) {
+    min-height: 462px;
+  }
     @media (min-width: $tablet-width) and (max-width: $desktop-width) {
     // width: 620px;
-
-  }
+      }
 
   @media (min-width: $desktop-width-only) {
     display: grid;
@@ -41,13 +45,13 @@
 
 .page-header__bar { 
   padding: 21px 20px;
+  display: flex;
+  justify-content: space-between;
   
   @media (max-width: $mobile-width-only) {
     position: relative;
     min-width: 320px;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
+    margin: 0;    
     padding: 21px 20px;
   }  
 }

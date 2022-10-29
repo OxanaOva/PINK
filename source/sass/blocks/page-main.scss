@@ -1,0 +1,34 @@
+.page-main__titles {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: $mobile-width-only) {
+    padding: 46px 20px 32px;
+  }
+  
+  @media (min-width: $desktop-width-only) {
+    max-width: 940px;
+    padding-bottom: 72px;
+  }
+}
+
+.page-main__title {
+  font-weight: 300;
+  margin: 0;
+  @media (max-width: $mobile-width-only) {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 280;
+  }
+  @media (min-width: $desktop-width-only) {
+    font-size: 50px;
+    line-height: 68px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .page-main__title:not(:last-of-type){
+    margin-bottom: 32px;
+  }
+}
